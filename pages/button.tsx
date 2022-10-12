@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Button, Group } from '@mantine/core'
 import { BrandGithub, ThreeDCubeSphere } from 'tabler-icons-react'
 import { Layout } from '../components/Layout'
