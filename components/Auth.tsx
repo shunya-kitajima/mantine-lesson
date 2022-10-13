@@ -61,5 +61,65 @@ export const Auth = () => {
     }
   }
 
-  return <div></div>
+  return (
+    <Layout title="Auth">
+      <Group direction="column" position="center">
+        <ShieldCheckIcon className="h-16 w-16 text-blue-500" />
+        {error && (
+          <Alert
+            mt="md"
+            icon={<ExclamationCircleIcon className="text-pink-500" />}
+            title="Authorization Error"
+            color="red"
+            radius="md"
+          >
+            {error}
+          </Alert>
+        )}
+        <form onSubmit={form.onSubmit(handleSubmit)}>
+          <TextInput
+            mt="md"
+            id="email"
+            label="Email*"
+            placeholder="example@gmail.com"
+            {...form.getInputProps('email')}
+          />
+          <PasswordInput
+            mt="md"
+            id="password"
+            label="Password*"
+            placeholder="password"
+            description="Must include one upper + lower char & special char"
+            {...form.getInputProps('password')}
+          />
+          {isRegister && (
+            <NumberInput
+              mt="md"
+              id="age"
+              label="Age*"
+              placeholder="Your age"
+              {...form.getInputProps('age')}
+            />
+          )}
+          <Group mt="lg" position="apart">
+            <Anchor
+              component="button"
+              type="button"
+              color="gray"
+              size="sm"
+              onClick={() => {
+                setIsRegister(!isRegister)
+                setError('')
+              }}
+            >
+              {isRegister
+                ? 'Have an account? Login'
+                : "Don't have an account? Register"}
+            </Anchor>
+            <Button type="submit">{isRegister ? 'Register' : 'Login'}</Button>
+          </Group>
+        </form>
+      </Group>
+    </Layout>
+  )
 }
