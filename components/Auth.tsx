@@ -28,5 +28,38 @@ const schema = Yup.object().shape({
 })
 
 export const Auth = () => {
+  const [isRegister, setIsRegister] = useState(false)
+  const [error, setError] = useState('')
+  const form = useForm<Form>({
+    schema: yupResolver(schema),
+    initialValues: {
+      email: '',
+      password: '',
+      age: 15,
+    },
+  })
+
+  const handleSubmit = async () => {
+    if (isRegister) {
+      const { error } = await supabase.auth.signUp({
+        email: form.values.email,
+        password: form.values.password,
+      })
+      if (error) {
+        setError(error.message)
+      }
+      form.reset()
+    } else {
+      const { error } = await supabase.auth.signIn({
+        email: form.values.email,
+        password: form.values.password,
+      })
+      if (error) {
+        setError(error.message)
+      }
+      form.reset()
+    }
+  }
+
   return <div></div>
 }
