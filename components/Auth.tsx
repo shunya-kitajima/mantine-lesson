@@ -27,7 +27,7 @@ const schema = Yup.object().shape({
   age: Yup.number().min(15, 'Only over 15 for new account'),
 })
 
-export const Auth = () => {
+export const Auth: React.FC = () => {
   const [isRegister, setIsRegister] = useState(false)
   const [error, setError] = useState('')
   const form = useForm<Form>({
