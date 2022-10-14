@@ -1,6 +1,6 @@
 import React from 'react'
 import { ShieldCheckIcon } from '@heroicons/react/24/solid'
-import { ArrowLeftOnRectangleIcon } from '@heroicons/react/24/outline'
+import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline'
 import { ActionIcon, Center, Menu } from '@mantine/core'
 import { supabase } from '../utils/supabase'
 import { Layout } from './Layout'
@@ -17,7 +17,7 @@ export const DashBoard: React.FC = () => {
       </Center>
       <Center>
         <ActionIcon my="md" size="lg" onClick={signOut}>
-          <ArrowLeftOnRectangleIcon />
+          <ArrowRightOnRectangleIcon />
         </ActionIcon>
       </Center>
     </Layout>
