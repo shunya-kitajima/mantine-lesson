@@ -18,7 +18,7 @@ import { Form } from '../types'
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('No email provided'),
-  passward: Yup.string()
+  password: Yup.string()
     .required('No password provided')
     .min(8, 'Password should be min 8 chars')
     .matches(/[a-z]+/, 'One lowercase char missing')
