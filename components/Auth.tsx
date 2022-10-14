@@ -19,11 +19,11 @@ import { Form } from '../types'
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('No email provided'),
   password: Yup.string()
-    .required('No password provided')
     .min(8, 'Password should be min 8 chars')
     .matches(/[a-z]+/, 'One lowercase char missing')
     .matches(/[A-Z]+/, 'One uppercase char missing')
-    .matches(/[@$!%*#?&]+/, 'One special char missing'),
+    .matches(/[@$!%*#?&]+/, 'One special char missing')
+    .required('No password provided'),
   age: Yup.number().min(15, 'Only over 15 for new account'),
 })
 
