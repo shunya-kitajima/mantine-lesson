@@ -23,7 +23,7 @@ const schema = Yup.object().shape({
     .min(8, 'Password should be min 8 chars')
     .matches(/[a-z]+/, 'One lowercase char missing')
     .matches(/[A-Z]+/, 'One uppercase char missing')
-    .matches(/[@$!%*#?&]/, 'One special char missing'),
+    .matches(/[@$!%*#?&]+/, 'One special char missing'),
   age: Yup.number().min(15, 'Only over 15 for new account'),
 })
 
