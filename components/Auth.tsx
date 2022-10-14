@@ -96,7 +96,7 @@ export const Auth: React.FC = () => {
             <NumberInput
               mt="md"
               id="age"
-              label="Age*"
+              label="Age"
               placeholder="Your age"
               {...form.getInputProps('age')}
             />
