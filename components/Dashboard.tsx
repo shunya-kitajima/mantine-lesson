@@ -15,6 +15,9 @@ export const DashBoard: React.FC = () => {
       <Center>
         <ShieldCheckIcon className="mb-4 h-14 w-14 text-teal-500" />
       </Center>
+      <Menu trigger="hover" size="xl">
+        <Menu.Label> UI Component</Menu.Label>
+      </Menu>
       <Center>
         <ActionIcon my="md" size="lg" onClick={signOut}>
           <ArrowRightOnRectangleIcon />
