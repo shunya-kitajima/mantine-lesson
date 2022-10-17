@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { supabase } from '../utils/supabase'
 import useStore from '../store'
 import { Auth } from '../components/Auth'
-import { DashBoard } from '../components/Dashboard'
+import { DashBoard } from '../components/DashBoard'
 
 const Home: NextPage = () => {
   const session = useStore((state) => state.session)
