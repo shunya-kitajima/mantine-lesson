@@ -17,16 +17,18 @@ export const DashBoard: React.FC = () => {
       <Center>
         <ShieldCheckIcon className="mb-4 h-14 w-14 text-teal-500" />
       </Center>
-      <Menu trigger="hover" size="xl">
-        <Menu.Label> UI Component</Menu.Label>
-        <Menu.Item
-          icon={<Settings size={16} />}
-          component={NextLink}
-          href="/button"
-        >
-          Button
-        </Menu.Item>
-      </Menu>
+      <Center>
+        <Menu trigger="hover" size="xl">
+          <Menu.Label> UI Component</Menu.Label>
+          <Menu.Item
+            icon={<Settings size={16} />}
+            component={NextLink}
+            href="/button"
+          >
+            Button
+          </Menu.Item>
+        </Menu>
+      </Center>
       <Center>
         <ActionIcon my="md" size="lg" onClick={signOut}>
           <ArrowRightOnRectangleIcon />
