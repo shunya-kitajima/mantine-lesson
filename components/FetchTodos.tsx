@@ -27,5 +27,14 @@ export const FetchTodos: React.FC = () => {
       </Center>
     )
 
-  return <div>FetchTodos</div>
+  return (
+    <div className="text-center">
+      <Text weight="bold">Task List</Text>
+      {data?.map((todo) => (
+        <Text my="xs" size="sm" key={todo.id}>
+          {todo.title}
+        </Text>
+      ))}
+    </div>
+  )
 }
