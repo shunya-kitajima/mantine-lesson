@@ -34,6 +34,14 @@ const MultiSelectDemo: React.FC = () => {
             <Radio value="vue" label="Vue" />
           </RadioGroup>
         </Center>
+        <Text>🚀 What is your favorite React framework ?</Text>
+        <MultiSelect
+          my="lg"
+          value={selectValue}
+          onChange={setSelectValue}
+          data={['Next.js', 'Remix', 'Gatby.js']}
+          clearable
+        />
       </Container>
       <Center>
         <Link href="/">
