@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { ArrowUturnLeftIcon } from '@heroicons/react/20/solid'
-import { Center } from '@mantine/core'
+import { Center, Grid } from '@mantine/core'
 import { FetchTodos } from '../components/FetchTodos'
 import { Layout } from '../components/Layout'
 
