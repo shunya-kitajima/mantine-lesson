@@ -40,6 +40,7 @@ const MultiSelectDemo: React.FC = () => {
           value={selectValue}
           onChange={setSelectValue}
           data={['Next.js', 'Remix', 'Gatby.js']}
+          placeholder="Select items"
           clearable
         />
       </Container>
