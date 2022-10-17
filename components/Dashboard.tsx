@@ -27,6 +27,13 @@ export const DashBoard: React.FC = () => {
           >
             Button
           </Menu.Item>
+          <Menu.Item
+            icon={<Settings size={16} />}
+            component={NextLink}
+            href="/grid"
+          >
+            Grid
+          </Menu.Item>
         </Menu>
       </Center>
       <Center>
