@@ -41,6 +41,13 @@ export const DashBoard: React.FC = () => {
           >
             Group
           </Menu.Item>
+          <Menu.Item
+            icon={<Settings size={16} />}
+            component={NextLink}
+            href="/multi-select"
+          >
+            Multi Select
+          </Menu.Item>
         </Menu>
       </Center>
       <Center>
