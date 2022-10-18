@@ -27,5 +27,32 @@ const schema = Yup.object().shape({
 })
 
 export const AuthenForm: React.FC = () => {
+  const [Loading, setLoading] = useState(false)
+  const [isRegister, setIsRegister] = useState(true)
+  const form = useForm<AuthForm>({
+    schema: yupResolver(schema),
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      termsOfService: true,
+    },
+  })
+
+  const toggleAuthMode = () => {
+    setIsRegister(!isRegister)
+  }
+
+  const handleSubmit = (values: AuthForm) => {
+    console.log(values)
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      form.reset()
+    }, 3000)
+  }
+
   return <div>AuthenForm</div>
 }
