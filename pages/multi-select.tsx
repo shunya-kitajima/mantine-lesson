@@ -32,7 +32,7 @@ const MultiSelectDemo: React.FC = () => {
     useState<TransferListData>(initialValues)
 
   return (
-    <Layout title="Multi-Select">
+    <Layout title="Multi Select">
       <Container>
         <Text>🚀 What is your most favorite frontend library ?</Text>
         <Center>
