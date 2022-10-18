@@ -23,7 +23,7 @@ const schema = Yup.object().shape({
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Password does not match')
     .required(),
-  termsOfService: Yup.boolean().required(),
+  termsOfService: Yup.boolean().oneOf([true], 'Please check'),
 })
 
 export const AuthenForm: React.FC = () => {
