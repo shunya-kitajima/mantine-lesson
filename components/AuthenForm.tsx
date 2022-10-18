@@ -27,7 +27,7 @@ const schema = Yup.object().shape({
 })
 
 export const AuthenForm: React.FC = () => {
-  const [Loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [isRegister, setIsRegister] = useState(true)
   const form = useForm<AuthForm>({
     schema: yupResolver(schema),
@@ -54,5 +54,69 @@ export const AuthenForm: React.FC = () => {
     }, 3000)
   }
 
-  return <div>AuthenForm</div>
+  return (
+    <Paper>
+      <form onSubmit={form.onSubmit(handleSubmit)}>
+        <LoadingOverlay visible={loading} />
+        {isRegister && (
+          <Group grow>
+            <TextInput
+              data-autoFocus
+              placeholder="Your first name"
+              label="First name"
+              {...form.getInputProps('firstName')}
+            />
+            <TextInput
+              placeholder="Your last name"
+              label="Last name"
+              {...form.getInputProps('lastName')}
+            />
+          </Group>
+        )}
+        <TextInput
+          mt="md"
+          placeholder="Your email"
+          label="Email"
+          {...form.getInputProps('email')}
+        />
+        <PasswordInput
+          mt="md"
+          placeholder="Password"
+          label="Password"
+          {...form.getInputProps('password')}
+        />
+        {isRegister && (
+          <PasswordInput
+            mt="md"
+            label="Confirm Password"
+            placeholder="Confirm Password"
+            {...form.getInputProps('confirmPassword')}
+          />
+        )}
+        {isRegister && (
+          <Checkbox
+            mt="xl"
+            label="I agree to the terms and conditions"
+            {...form.getInputProps('termsOfService', { type: 'checkbox' })}
+          />
+        )}
+        <Group>
+          <Anchor
+            component="button"
+            type="button"
+            color="gray"
+            onClick={toggleAuthMode}
+            size="sm"
+          >
+            {isRegister
+              ? 'Have an account? Login'
+              : "Don't have an account? Register"}
+          </Anchor>
+          <Button color="blue" type="submit">
+            {isRegister ? 'Register' : 'Login'}
+          </Button>
+        </Group>
+      </form>
+    </Paper>
+  )
 }
