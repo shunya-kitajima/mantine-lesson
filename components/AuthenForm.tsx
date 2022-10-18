@@ -61,7 +61,7 @@ export const AuthenForm: React.FC = () => {
         {isRegister && (
           <Group grow>
             <TextInput
-              data-autoFocus
+              autoFocus
               placeholder="Your first name"
               label="First name"
               {...form.getInputProps('firstName')}
