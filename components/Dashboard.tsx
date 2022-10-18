@@ -62,6 +62,13 @@ export const DashBoard: React.FC = () => {
           >
             Dialog
           </Menu.Item>
+          <Menu.Item
+            icon={<Settings size={16} />}
+            component={NextLink}
+            href="/modal"
+          >
+            Modal
+          </Menu.Item>
         </Menu>
       </Center>
       <Center>
