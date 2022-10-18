@@ -100,7 +100,7 @@ export const AuthenForm: React.FC = () => {
             {...form.getInputProps('termsOfService', { type: 'checkbox' })}
           />
         )}
-        <Group>
+        <Group position="apart" mt="xl">
           <Anchor
             component="button"
             type="button"
