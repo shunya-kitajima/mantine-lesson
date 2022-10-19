@@ -57,6 +57,21 @@ const AvatarDemo: React.FC = () => {
     <Layout title="Profile">
       <Group direction="column" position="center">
         {isLoading && <Loader />}
+        {avatarUrl && (
+          <Indicator
+            label=""
+            size={16}
+            offset={7}
+            position="bottom-end"
+            color="green"
+            withBorder
+          >
+            <Avatar
+              size="lg"
+              src={`${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_URL}/avatars/${avatarUrl}`}
+            />
+          </Indicator>
+        )}
         <label htmlFor="avatar">
           <CameraIcon className="my-3 h-7 w-7 cursor-pointer text-gray-500" />
         </label>
