@@ -73,7 +73,32 @@ const PostList: React.FC = () => {
     form.reset()
   }
 
-  return <Layout title="Card"></Layout>
+  return (
+    <Layout title="PostList">
+      <Container className="w-96">
+        <form onSubmit={form.onSubmit(handleSubmit)}>
+          <TextInput
+            mb="md"
+            label="Title*"
+            placeholder="New title"
+            {...form.getInputProps('title')}
+          />
+          <Textarea
+            mb="md"
+            minRows={6}
+            label="Description*"
+            placeholder="New content"
+            {...form.getInputProps('content')}
+          />
+          <Select
+            label="Status*"
+            data={['New', 'PickUp', 'Hot']}
+            {...form.getInputProps('status')}
+          />
+        </form>
+      </Container>
+    </Layout>
+  )
 }
 
 export default PostList
