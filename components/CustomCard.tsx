@@ -30,7 +30,7 @@ export const CustomCard: React.FC<Props> = ({
           {status}
         </Badge>
       </Group>
-      <Text size="md">{content}</Text>
+      <Text size="sm">{content}</Text>
       <Button mt="md" size="xs" variant="light" color="indigo" fullWidth>
         Subscribe
       </Button>

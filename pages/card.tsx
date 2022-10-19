@@ -124,7 +124,7 @@ const PostList: React.FC = () => {
               status={post.status}
               postUrl={
                 post.post_url
-                  ? `${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_URL}/posts/${postUrl}`
+                  ? `${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_URL}/posts/${post.post_url}`
                   : ''
               }
             />
