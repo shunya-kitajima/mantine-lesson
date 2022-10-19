@@ -115,6 +115,22 @@ const PostList: React.FC = () => {
           </Center>
         </form>
       </Container>
+      <Grid>
+        {data?.map((post) => (
+          <Grid.Col key={post.id} span={3}>
+            <CustomCard
+              title={post.title}
+              content={post.content}
+              status={post.status}
+              postUrl={
+                post.post_url
+                  ? `${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_URL}/posts/${postUrl}`
+                  : ''
+              }
+            />
+          </Grid.Col>
+        ))}
+      </Grid>
     </Layout>
   )
 }
