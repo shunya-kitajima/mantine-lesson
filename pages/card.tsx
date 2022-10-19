@@ -20,8 +20,60 @@ import { useQueryPosts } from '../hooks/useQueryPosts'
 import { supabase } from '../utils/supabase'
 import { Post } from '../types'
 
+const schema = Yup.object().shape({
+  title: Yup.string().required('No title provided'),
+  content: Yup.string().required('No content provided'),
+  status: Yup.string().required('No status provided'),
+})
+
 const PostList: React.FC = () => {
-  return <div></div>
+  const queryClient = useQueryClient()
+  const { data } = useQueryPosts()
+  const [isLoading, setIsLoading] = useState(false)
+  const [postUrl, setPostUrl] = useState('')
+  const form = useForm<Omit<Post, 'id' | 'created_at' | 'post_url'>>({
+    schema: yupResolver(schema),
+    initialValues: {
+      title: '',
+      content: '',
+      status: '',
+    },
+  })
+
+  const uploadPostImg = async (e: ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0)
+      throw new Error('Please select the image file')
+
+    const file = e.target.files[0]
+    const fileExt = file.name.split('.').pop()
+    const fileName = `${Math.random()}.${fileExt}`
+
+    setIsLoading(true)
+    const { error } = await supabase.storage
+      .from('posts')
+      .upload(fileName, file)
+    if (error) throw new Error(error.message)
+    setPostUrl(fileName)
+    setIsLoading(false)
+  }
+  const handleSubmit = async () => {
+    setIsLoading(true)
+    const { data, error } = await supabase.from('posts').insert({
+      title: form.values.title,
+      content: form.values.content,
+      status: form.values.status,
+      post_url: postUrl,
+    })
+    if (error) throw new Error(error.message)
+    const cachedPosts = queryClient.getQueryData<Post[]>(['posts'])
+    if (cachedPosts)
+      queryClient.setQueryData(['posts'], [...cachedPosts, data[0]])
+    setIsLoading(false)
+    setPostUrl('')
+    form.reset()
+  }
+
+  return <Layout title="Card"></Layout>
 }
 
 export default PostList
