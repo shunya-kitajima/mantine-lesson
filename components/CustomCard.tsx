@@ -24,6 +24,12 @@ export const CustomCard: React.FC<Props> = ({
           withPlaceholder
         />
       </Card.Section>
+      <Group position="apart" my="md">
+        <Text weight={800}>{title}</Text>
+        <Badge color="pink" radius="lg" variant="filled">
+          {status}
+        </Badge>
+      </Group>
     </Card>
   )
 }
