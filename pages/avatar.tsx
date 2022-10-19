@@ -55,7 +55,19 @@ const AvatarDemo: React.FC = () => {
 
   return (
     <Layout title="Profile">
-      <Group></Group>
+      <Group direction="column" position="center">
+        {isLoading && <Loader />}
+        <label htmlFor="avatar">
+          <CameraIcon className="my-3 h-7 w-7 cursor-pointer text-gray-500" />
+        </label>
+        <input
+          className="hidden"
+          type="file"
+          id="avatar"
+          accept="image/*"
+          onChange={(e) => uploadAvatarImg(e)}
+        />
+      </Group>
     </Layout>
   )
 }
