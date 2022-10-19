@@ -108,6 +108,11 @@ const PostList: React.FC = () => {
               onChange={(e) => uploadPostImg(e)}
             />
           </Center>
+          <Center>
+            <Button mb="xl" type="submit">
+              New Post
+            </Button>
+          </Center>
         </form>
       </Container>
     </Layout>
