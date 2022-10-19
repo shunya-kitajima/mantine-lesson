@@ -69,6 +69,13 @@ export const DashBoard: React.FC = () => {
           >
             Modal
           </Menu.Item>
+          <Menu.Item
+            icon={<Settings size={16} />}
+            component={NextLink}
+            href="/avatar"
+          >
+            Avatar
+          </Menu.Item>
         </Menu>
       </Center>
       <Center>
