@@ -95,6 +95,19 @@ const PostList: React.FC = () => {
             data={['New', 'PickUp', 'Hot']}
             {...form.getInputProps('status')}
           />
+          <Center>{isLoading && <Loader my="xl" />}</Center>
+          <Center>
+            <label htmlFor="photo">
+              <CameraIcon className="my-3 h-7 w-7 cursor-pointer text-gray-500" />
+            </label>
+            <input
+              className="hidden"
+              type="file"
+              id="photo"
+              accept="image/*"
+              onChange={(e) => uploadPostImg(e)}
+            />
+          </Center>
         </form>
       </Container>
     </Layout>
