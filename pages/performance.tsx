@@ -37,6 +37,13 @@ const PerformanceDemo: React.FC = () => {
     setLevel(data?.level)
   }, [data])
 
+  const updateHandler = async (value: number, key: string) => {
+    await supabase
+      .from('performances')
+      .update({ [key]: value })
+      .eq('user_id', supabase.auth.user()?.id)
+  }
+
   return <Layout title="Performance"></Layout>
 }
 
