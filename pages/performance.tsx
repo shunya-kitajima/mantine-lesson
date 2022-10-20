@@ -95,7 +95,7 @@ const PerformanceDemo: React.FC = () => {
                 understand the server data management with react-query
               </Text>
             </Timeline.Item>
-            <Timeline.Item bullet={<GitBranch size={12} />} title="Level 4">
+            <Timeline.Item bullet={<MessageDots size={12} />} title="Level 4">
               <Text color="dimmed" size="sm">
                 <Text
                   variant="link"
