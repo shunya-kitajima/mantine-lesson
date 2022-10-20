@@ -42,7 +42,7 @@ export const useQueryPerformances = () => {
     return () => {
       removeSubscription()
     }
-  }, [])
+  }, [queryClient])
 
   return useQuery<Performance, Error>({
     queryKey: ['performance'],
