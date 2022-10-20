@@ -267,6 +267,12 @@ const PerformanceDemo: React.FC = () => {
           />
         </Container>
       )}
+      <Space h="md" />
+      <Center>
+        <Link href="/">
+          <ArrowUturnLeftIcon className="mt-4 h-6 w-6 cursor-pointer text-gray-300" />
+        </Link>
+      </Center>
     </Layout>
   )
 }
