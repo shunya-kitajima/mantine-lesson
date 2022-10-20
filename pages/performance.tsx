@@ -185,6 +185,88 @@ const PerformanceDemo: React.FC = () => {
           </Grid.Col>
         </Grid>
       )}
+      {data && (
+        <Container>
+          <Slider
+            className={'my-10 w-96'}
+            value={level}
+            onChange={setLevel}
+            onChangeEnd={(value) => {
+              updateHandler(value, 'level')
+            }}
+            color="blue"
+            min={1}
+            max={4}
+            step={1}
+            marks={[
+              { value: 1, label: '1' },
+              { value: 2, label: '2' },
+              { value: 3, label: '3' },
+              { value: 4, label: '4' },
+            ]}
+          />
+          <Slider
+            className={'my-10 w-96'}
+            value={efficiency}
+            onChange={setEfficiency}
+            onChangeEnd={(value) => {
+              updateHandler(value, 'efficiency')
+            }}
+            color="indigo"
+            step={1}
+            marks={[
+              { value: 20, label: '20%' },
+              { value: 50, label: '50%' },
+              { value: 80, label: '80%' },
+            ]}
+          />
+          <Slider
+            className={'my-10 w-96'}
+            value={comport}
+            onChange={setComfort}
+            onChangeEnd={(value) => {
+              updateHandler(value, 'comport')
+            }}
+            color="pink"
+            step={1}
+            marks={[
+              { value: 20, label: '20%' },
+              { value: 50, label: '50%' },
+              { value: 80, label: '80%' },
+            ]}
+          />
+          <Slider
+            className={'my-10 w-96'}
+            value={luck}
+            onChange={setLuck}
+            onChangeEnd={(value) => {
+              updateHandler(value, 'luck')
+            }}
+            color="orange"
+            step={1}
+            marks={[
+              { value: 20, label: '20%' },
+              { value: 50, label: '50%' },
+              { value: 80, label: '80%' },
+            ]}
+          />
+          <Slider
+            className={'my-10 w-96'}
+            value={durability}
+            onChange={setDurability}
+            onChangeEnd={(value) => {
+              updateHandler(value, 'durability')
+            }}
+            color="cyan"
+            step={1}
+            marks={[
+              { value: 20, label: '20%' },
+              { value: 50, label: '50%' },
+              { value: 80, label: '80%' },
+            ]}
+          />
+        </Container>
+      )}
     </Layout>
   )
 }
