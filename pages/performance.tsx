@@ -44,7 +44,76 @@ const PerformanceDemo: React.FC = () => {
       .eq('user_id', supabase.auth.user()?.id)
   }
 
-  return <Layout title="Performance"></Layout>
+  return (
+    <Layout title="Performance">
+      <Container>
+        {data && (
+          <Timeline active={data.level - 1} bulletSize={24} lineWidth={2}>
+            <Timeline.Item bullet={<GitBranch size={12} />} title="Level 1">
+              <Text color="dimmed" size="sm">
+                <Text
+                  variant="link"
+                  size="sm"
+                  component="a"
+                  target="_blank"
+                  href="https://reactjs.org/docs/hooks-intro.html"
+                >
+                  React Hokks
+                </Text>{' '}
+                understand the basic usage of React Hokks
+              </Text>
+            </Timeline.Item>
+            <Timeline.Item bullet={<GitCommit size={12} />} title="Level 2">
+              <Text color="dimmed" size="sm">
+                <Text
+                  variant="link"
+                  size="sm"
+                  component="a"
+                  target="_blank"
+                  href="https://redux-toolkit.js.org"
+                >
+                  Redux Toolkit
+                </Text>{' '}
+                understand the client state management with RTK
+              </Text>
+            </Timeline.Item>
+            <Timeline.Item
+              bullet={<GitPullRequest size={12} />}
+              title="Level 3"
+              lineVariant="dashed"
+            >
+              <Text color="dimmed" size="sm">
+                <Text
+                  variant="link"
+                  size="sm"
+                  component="a"
+                  target="_blank"
+                  href="https://react-query.tanstack.com/"
+                >
+                  React-Query
+                </Text>{' '}
+                understand the server data management with react-query
+              </Text>
+            </Timeline.Item>
+            <Timeline.Item bullet={<GitBranch size={12} />} title="Level 4">
+              <Text color="dimmed" size="sm">
+                <Text
+                  variant="link"
+                  size="sm"
+                  component="a"
+                  target="_blank"
+                  href="https://testing-library.com/docs/react-testing-library/intro/"
+                >
+                  Integration + E2E test
+                </Text>{' '}
+                able to write the test code
+              </Text>
+            </Timeline.Item>
+          </Timeline>
+        )}
+      </Container>
+    </Layout>
+  )
 }
 
 export default PerformanceDemo
