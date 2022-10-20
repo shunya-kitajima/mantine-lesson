@@ -7,6 +7,16 @@ import { Performance } from '../types'
 export const useQueryPerformances = () => {
   const queryClient = useQueryClient()
 
+  const getPerformances = async () => {
+    const { data, error } = await supabase
+      .from('performances')
+      .select('*')
+      .eq('user_id', supabase.auth.user()?.id)
+      .single()
+    if (error) throw new Error(error.message)
+    return data
+  }
+
   useEffect(() => {
     const subsc = supabase
       .from('performances')
@@ -33,4 +43,9 @@ export const useQueryPerformances = () => {
       removeSubscription()
     }
   }, [])
+
+  return useQuery<Performance, Error>({
+    queryKey: ['performance'],
+    queryFn: getPerformances,
+  })
 }
