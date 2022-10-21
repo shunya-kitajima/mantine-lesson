@@ -18,6 +18,32 @@ const CryptoDeom: React.FC = () => {
   const [btc, setBtc] = useState<Coin | null>(null)
   const [eth, setEth] = useState<Coin | null>(null)
 
+  useEffect(() => {
+    const dateParam = date
+      ? `date=${getDate(date!)}-${getMonth(date!) + 1}-${getYear(date!)}`
+      : ''
+
+    if (dateParam) {
+      axios
+        .get(
+          `https://api.coingecko.com/api/v3/coins/bitcoin/history?${dateParam}`
+        )
+        .then((res) => {
+          setBtc(res.data)
+        })
+      axios
+        .get(
+          `https://api.coingecko.com/api/v3/coins/ethereum/history?${dateParam}`
+        )
+        .then((res) => {
+          setEth(res.data)
+        })
+    } else {
+      setBtc(null)
+      setEth(null)
+    }
+  }, [date])
+
   return <Layout title="Crypto"></Layout>
 }
 
