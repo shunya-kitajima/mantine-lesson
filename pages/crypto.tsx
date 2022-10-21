@@ -44,7 +44,29 @@ const CryptoDeom: React.FC = () => {
     }
   }, [date])
 
-  return <Layout title="Crypto"></Layout>
+  return (
+    <Layout title="Crypto">
+      <Group direction="column" position="center">
+        <BoltIcon className="mb-4 h-10 w-10 text-blue-500" />
+        <Text mt="md">
+          <Text color="blue" component="span">
+            Bitcoin
+          </Text>{' '}
+          {Math.round(Number(btc?.market_data?.current_price.jpy) * 100) / 100}
+        </Text>
+        <Text>
+          <Text color="cyan" component="span">
+            Ethereum
+          </Text>{' '}
+          {Math.round(Number(eth?.market_data?.current_price.jpy) * 100) / 100}
+        </Text>
+        <DatePicker my="md" value={date} onChange={setDate} />
+        <Link href="/">
+          <ArrowUturnLeftIcon className="mt-4 h-6 w-6 cursor-pointer text-gray-300" />
+        </Link>
+      </Group>
+    </Layout>
+  )
 }
 
 export default CryptoDeom
