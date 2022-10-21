@@ -90,6 +90,13 @@ export const DashBoard: React.FC = () => {
           >
             Performance Indicator
           </Menu.Item>
+          <Menu.Item
+            icon={<Settings size={16} />}
+            component={NextLink}
+            href="/performance"
+          >
+            Table
+          </Menu.Item>
         </Menu>
       </Center>
       <Center>
