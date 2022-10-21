@@ -14,6 +14,10 @@ type Coin = {
 }
 
 const CryptoDeom: React.FC = () => {
+  const [date, setDate] = useState<Date | null>(new Date())
+  const [btc, setBtc] = useState<Coin | null>(null)
+  const [eth, setEth] = useState<Coin | null>(null)
+
   return <Layout title="Crypto"></Layout>
 }
 
