@@ -26,6 +26,7 @@ const CryptoDeom: React.FC = () => {
 
     const getCrypto = async () => {
       if (dateParam) {
+        setIsLoading(true)
         await axios
           .get(
             `https://api.coingecko.com/api/v3/coins/bitcoin/history?${dateParam}`
@@ -40,6 +41,7 @@ const CryptoDeom: React.FC = () => {
           .then((res) => {
             setEth(res.data)
           })
+        setIsLoading(false)
       } else {
         setBtc(null)
         setEth(null)
@@ -52,6 +54,7 @@ const CryptoDeom: React.FC = () => {
     <Layout title="Crypto">
       <Group direction="column" position="center">
         <BoltIcon className="mb-4 h-10 w-10 text-blue-500" />
+        {isLoading && <Loader className="mb-4 h-10 w-10 text-blue-500" />}
         <Text mt="md">
           <Text color="blue" component="span">
             Bitcoin
