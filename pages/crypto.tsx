@@ -7,6 +7,12 @@ import { DatePicker } from '@mantine/dates'
 import { getDate, getMonth, getYear } from 'date-fns'
 import { Layout } from '../components/Layout'
 
+type Coin = {
+  market_data: {
+    current_price: { jpy: string }
+  }
+}
+
 const CryptoDeom: React.FC = () => {
   return <Layout title="Crypto"></Layout>
 }
