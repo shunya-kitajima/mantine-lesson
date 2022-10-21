@@ -37,9 +37,9 @@ const TableDemo: React.FC = () => {
           <caption>Todo items from Supabase</caption>
           <thead>
             <tr>
-              <td>ID</td>
-              <td>Title</td>
-              <td>Created At</td>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Created At</th>
             </tr>
           </thead>
           <tbody>{rows}</tbody>
