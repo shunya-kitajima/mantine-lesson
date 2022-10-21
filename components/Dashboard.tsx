@@ -93,7 +93,7 @@ export const DashBoard: React.FC = () => {
           <Menu.Item
             icon={<Settings size={16} />}
             component={NextLink}
-            href="/performance"
+            href="/table"
           >
             Table
           </Menu.Item>
