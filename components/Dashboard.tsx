@@ -111,6 +111,13 @@ export const DashBoard: React.FC = () => {
           >
             Notification
           </Menu.Item>
+          <Menu.Item
+            icon={<Settings size={16} />}
+            component={NextLink}
+            href="/hooks"
+          >
+            Hooks
+          </Menu.Item>
         </Menu>
       </Center>
       <Center>
