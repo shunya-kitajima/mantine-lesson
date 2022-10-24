@@ -91,6 +91,27 @@ const NotificationDemo: React.FC = () => {
               autoClose: false,
               disallowClose: true,
             })
+
+            const { data, error, status } = await supabase
+              .from('profiles')
+              .select('avatar_url')
+              .eq('id', supabase.auth.user()?.id)
+              .single()
+            await delay(2000)
+            if (error && status !== 406) throw new Error(error.message)
+            updateNotification({
+              id: 'load-profile',
+              color: 'teal',
+              title: 'Your profile was loaded',
+              message:
+                'Noticifation will close in 2 seconds, you can close this notification now',
+              icon: (
+                <Avatar
+                  src={`${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_URL}/avatars/${data.avatar_url}`}
+                />
+              ),
+              autoClose: 2000,
+            })
           }}
         >
           Show notification 5
