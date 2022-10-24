@@ -132,23 +132,25 @@ const HooksDemo: React.FC = () => {
           </Group>
         </Grid.Col>
         <Grid.Col span={6}>
-          <Progress
-            my="md"
-            className="w-80"
-            color="teal"
-            radius="lg"
-            value={currentPos.x * 100}
-            animate
-          />
-          <Progress
-            my="md"
-            className="w-80"
-            color="indigo"
-            radius="lg"
-            value={currentPos.y * 100}
-            animate
-          />
-          {active && <Loader my="md" variant="bars" />}
+          <Group direction="column" position="center">
+            <Progress
+              my="md"
+              className="w-80"
+              color="teal"
+              radius="lg"
+              value={currentPos.x * 100}
+              animate
+            />
+            <Progress
+              my="md"
+              className="w-80"
+              color="indigo"
+              radius="lg"
+              value={currentPos.y * 100}
+              animate
+            />
+            {active && <Loader my="md" variant="bars" />}
+          </Group>
         </Grid.Col>
       </Grid>
       <Center>
