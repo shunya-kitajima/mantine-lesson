@@ -56,7 +56,7 @@ const NotificationDemo: React.FC = () => {
         </Button>
         <Button
           onClick={() => {
-            updateNotification({
+            showNotification({
               id: 'load-data',
               loading: true,
               title: 'Loading your data',
@@ -74,7 +74,7 @@ const NotificationDemo: React.FC = () => {
                 message:
                   'Notification will close in 2 seconds, you can close this notification now',
                 icon: <Check />,
-                autoClose: false,
+                autoClose: 2000,
               })
             }, 3000)
           }}
