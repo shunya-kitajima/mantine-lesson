@@ -54,6 +54,9 @@ const HooksDemo: React.FC = () => {
         <Button color="orange" compact onClick={() => handlers.close()}>
           Close dialog
         </Button>
+        <Button color={btnColor} compact onClick={() => toggleBtnColor()}>
+          Toggle color
+        </Button>
       </Group>
     </Layout>
   )
