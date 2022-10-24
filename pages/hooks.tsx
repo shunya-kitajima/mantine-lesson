@@ -35,6 +35,7 @@ const HooksDemo: React.FC = () => {
   const [seconds, setSeconds] = useState(0)
   const interval = useInterval(() => setSeconds((s) => s + 1), 1000)
   const { hovered, ref: refHover } = useHover()
+  const idle = useIdle(3000)
 
   useEffect(() => {
     interval.start()
@@ -66,6 +67,18 @@ const HooksDemo: React.FC = () => {
           }`}
           ref={refHover}
         ></Paper>
+        <Indicator
+          size={16}
+          offset={7}
+          position="bottom-end"
+          color={idle ? 'yellow' : 'green'}
+          withBorder
+        >
+          <Avatar
+            size="lg"
+            src={`${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_URL}/avatars/0.11235993883148465.jpg`}
+          />
+        </Indicator>
       </Group>
       <Dialog
         opened={opened}
