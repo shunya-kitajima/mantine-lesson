@@ -119,6 +119,9 @@ const NotificationDemo: React.FC = () => {
         <Button color="gray" onClick={cleanNotificationsQueue}>
           Clean queue
         </Button>
+        <Button color="orange" onClick={cleanNotifications}>
+          Clean all
+        </Button>
       </Group>
     </Layout>
   )
