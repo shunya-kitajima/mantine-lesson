@@ -26,6 +26,8 @@ const HooksDemo: React.FC = () => {
     onClose: () => console.log('Closed'),
   })
   const [btnColor, toggleBtnColor] = useToggle('yellow', ['yellow', 'violet'])
+  const [seconds, setSeconds] = useState(0)
+  const interval = useInterval(() => setSeconds((s) => s + 1), 1000)
 
   return (
     <Layout title="Hooks">
