@@ -17,7 +17,7 @@ import {
   Grid,
   Center,
 } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
+import { useDisclosure, useToggle } from '@mantine/hooks'
 import { Layout } from '../components/Layout'
 
 const HooksDemo: React.FC = () => {
@@ -25,6 +25,7 @@ const HooksDemo: React.FC = () => {
     onOpen: () => console.log('Opened'),
     onClose: () => console.log('Closed'),
   })
+  const [btnColor, toggleBtnColor] = useToggle('yellow', ['yellow', 'violet'])
 
   return (
     <Layout title="Hooks">
