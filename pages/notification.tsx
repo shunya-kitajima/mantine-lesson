@@ -41,6 +41,19 @@ const NotificationDemo: React.FC = () => {
         >
           Show notification 2
         </Button>
+        <Button
+          onClick={() =>
+            showNotification({
+              title: 'Automatic test failed',
+              message: 'Test failed...',
+              icon: <X size={18} />,
+              color: 'red',
+              autoClose: false,
+            })
+          }
+        >
+          Show notification 3
+        </Button>
       </Group>
     </Layout>
   )
