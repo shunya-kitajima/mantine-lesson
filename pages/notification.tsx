@@ -54,6 +54,33 @@ const NotificationDemo: React.FC = () => {
         >
           Show notification 3
         </Button>
+        <Button
+          onClick={() => {
+            updateNotification({
+              id: 'load-data',
+              loading: true,
+              title: 'Loading your data',
+              message:
+                'Data will be loaded in 3 seconds, you cannot close this yet',
+              autoClose: false,
+              disallowClose: true,
+            })
+
+            setTimeout(() => {
+              updateNotification({
+                id: 'load-data',
+                color: 'teal',
+                title: 'Data was loaded',
+                message:
+                  'Notification will close in 2 seconds, you can close this notification now',
+                icon: <Check />,
+                autoClose: false,
+              })
+            }, 3000)
+          }}
+        >
+          Show notification 4
+        </Button>
       </Group>
     </Layout>
   )
