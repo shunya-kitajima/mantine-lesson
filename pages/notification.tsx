@@ -28,6 +28,19 @@ const NotificationDemo: React.FC = () => {
         >
           Show notification 1
         </Button>
+        <Button
+          onClick={() =>
+            showNotification({
+              title: 'PR approved',
+              message: 'Your PR approved and merged',
+              icon: <Check size={18} />,
+              color: 'teal',
+              autoClose: false,
+            })
+          }
+        >
+          Show notification 2
+        </Button>
       </Group>
     </Layout>
   )
