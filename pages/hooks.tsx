@@ -36,6 +36,19 @@ const HooksDemo: React.FC = () => {
 
   return (
     <Layout title="Hooks">
+      <Group position="center" direction="column">
+        <Text>
+          This page is active <strong>{seconds}</strong> [s] after mount
+        </Text>
+        <Button
+          compact
+          onClick={interval.toggle}
+          color={interval.active ? 'red' : 'teal'}
+          variant="light"
+        >
+          {interval.active ? 'Suspend' : 'Activate'}
+        </Button>
+      </Group>
       <Dialog
         opened={opened}
         withCloseButton
