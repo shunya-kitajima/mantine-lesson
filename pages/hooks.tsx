@@ -28,6 +28,7 @@ const HooksDemo: React.FC = () => {
   const [btnColor, toggleBtnColor] = useToggle('yellow', ['yellow', 'violet'])
   const [seconds, setSeconds] = useState(0)
   const interval = useInterval(() => setSeconds((s) => s + 1), 1000)
+  const { hovered, ref: refHover } = useHover()
 
   useEffect(() => {
     interval.start()
@@ -48,6 +49,16 @@ const HooksDemo: React.FC = () => {
         >
           {interval.active ? 'Suspend' : 'Activate'}
         </Button>
+      </Group>
+      <Group my="xl" direction="column" position="center">
+        <Paper
+          my="md"
+          p="md"
+          className={`h-40 w-40 cursor-pointer ${
+            hovered ? 'bg-indigo-500' : 'bg-orange-500'
+          }`}
+          ref={refHover}
+        ></Paper>
       </Group>
       <Dialog
         opened={opened}
