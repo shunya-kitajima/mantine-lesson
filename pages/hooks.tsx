@@ -17,7 +17,13 @@ import {
   Grid,
   Center,
 } from '@mantine/core'
-import { useDisclosure, useToggle, useInterval, useHover } from '@mantine/hooks'
+import {
+  useDisclosure,
+  useToggle,
+  useInterval,
+  useHover,
+  useIdle,
+} from '@mantine/hooks'
 import { Layout } from '../components/Layout'
 
 const HooksDemo: React.FC = () => {
@@ -33,6 +39,7 @@ const HooksDemo: React.FC = () => {
   useEffect(() => {
     interval.start()
     return interval.stop
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
