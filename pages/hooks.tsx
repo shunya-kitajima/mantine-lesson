@@ -142,9 +142,9 @@ const HooksDemo: React.FC = () => {
           <Progress
             my="md"
             className="w-80"
-            color="teal"
+            color="indigo"
             radius="lg"
-            value={currentPos.x * 100}
+            value={currentPos.y * 100}
           />
         </Grid.Col>
       </Grid>
