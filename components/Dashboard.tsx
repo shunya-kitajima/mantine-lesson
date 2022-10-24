@@ -104,6 +104,13 @@ export const DashBoard: React.FC = () => {
           >
             Crypto
           </Menu.Item>
+          <Menu.Item
+            icon={<Settings size={16} />}
+            component={NextLink}
+            href="/notification"
+          >
+            Notification
+          </Menu.Item>
         </Menu>
       </Center>
       <Center>
