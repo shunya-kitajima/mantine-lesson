@@ -17,7 +17,7 @@ import {
   Grid,
   Center,
 } from '@mantine/core'
-import { useDisclosure, useToggle } from '@mantine/hooks'
+import { useDisclosure, useToggle, useInterval } from '@mantine/hooks'
 import { Layout } from '../components/Layout'
 
 const HooksDemo: React.FC = () => {
