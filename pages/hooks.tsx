@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowUturnLeftIcon } from '@heroicons/react/20/solid'
 import { BrandGithub } from 'tabler-icons-react'
@@ -28,6 +28,11 @@ const HooksDemo: React.FC = () => {
   const [btnColor, toggleBtnColor] = useToggle('yellow', ['yellow', 'violet'])
   const [seconds, setSeconds] = useState(0)
   const interval = useInterval(() => setSeconds((s) => s + 1), 1000)
+
+  useEffect(() => {
+    interval.start()
+    return interval.stop
+  }, [])
 
   return (
     <Layout title="Hooks">
