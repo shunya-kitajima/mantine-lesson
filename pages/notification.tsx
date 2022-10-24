@@ -122,6 +122,9 @@ const NotificationDemo: React.FC = () => {
         <Button color="orange" onClick={cleanNotifications}>
           Clean all
         </Button>
+        <Link href="/">
+          <ArrowUturnLeftIcon className="mt-4 h-6 w-6 cursor-pointer text-gray-300" />
+        </Link>
       </Group>
     </Layout>
   )
