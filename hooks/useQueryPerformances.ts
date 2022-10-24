@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useQuery, useQueryClient } from 'react-query'
 import { SupabaseRealtimePayload } from '@supabase/supabase-js'
+import { showNotification } from '@mantine/notifications/lib/events'
 import { supabase } from '../utils/supabase'
 import { Performance } from '../types'
 
