@@ -81,6 +81,20 @@ const NotificationDemo: React.FC = () => {
         >
           Show notification 4
         </Button>
+        <Button
+          onClick={async () => {
+            showNotification({
+              id: 'load-profile',
+              loading: true,
+              title: 'Loading your profile',
+              message: 'Please wait for a while',
+              autoClose: false,
+              disallowClose: true,
+            })
+          }}
+        >
+          Show notification 5
+        </Button>
       </Group>
     </Layout>
   )
