@@ -146,6 +146,7 @@ const HooksDemo: React.FC = () => {
             radius="lg"
             value={currentPos.y * 100}
           />
+          {active && <Loader my="md" variant="bars" />}
         </Grid.Col>
       </Grid>
     </Layout>
