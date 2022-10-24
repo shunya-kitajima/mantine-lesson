@@ -138,6 +138,7 @@ const HooksDemo: React.FC = () => {
             color="teal"
             radius="lg"
             value={currentPos.x * 100}
+            animate
           />
           <Progress
             my="md"
@@ -145,6 +146,7 @@ const HooksDemo: React.FC = () => {
             color="indigo"
             radius="lg"
             value={currentPos.y * 100}
+            animate
           />
           {active && <Loader my="md" variant="bars" />}
         </Grid.Col>
