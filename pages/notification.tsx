@@ -14,7 +14,23 @@ import { delay } from '../utils/delay'
 import { Layout } from '../components/Layout'
 
 const NotificationDemo: React.FC = () => {
-  return <div></div>
+  return (
+    <Layout title="Notification">
+      <Group direction="column" position="center">
+        <Button
+          onClick={() =>
+            showNotification({
+              title: 'Default notification',
+              message: 'Hey there !',
+              autoClose: false,
+            })
+          }
+        >
+          Show notification 1
+        </Button>
+      </Group>
+    </Layout>
+  )
 }
 
 export default NotificationDemo
